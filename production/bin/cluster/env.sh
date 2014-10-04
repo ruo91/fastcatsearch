@@ -6,11 +6,11 @@ server_ip_list=(
 )
 
 #ssh port
-ssh_port=22
+ssh_port=`head -n 10 /etc/ssh/sshd_config | grep Port | awk '{print $2}'`
 
 # ssh user id
 ssh_user=fastcat
 
 # fastcatsearch install home path
-this_home=/home/fastcat/Application/fastcatsearch
+this_home=/opt/fastcatsearch
 target_home=$this_home
